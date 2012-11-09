@@ -1,0 +1,142 @@
+p, #updated { margin: 0.7em 0em } 
+
+#updated { font-style:italic }
+
+.alert-message {
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border:2px solid #7C9C5A;
+    margin: 0px 0px 1em;
+    background-color:#E7F1E4;
+    display:none;
+}
+
+.alert-message div { padding:0.8em; }
+.alert-message div p {
+    text-align:center;
+    text-shadow: 0 2px 3px #70727C;
+}
+.close { 
+    moz-border-radius: 5px;
+    border-radius: 5px;
+    width:8px;
+    height:8px;
+    float:right; 
+    margin: 0.5em;
+    padding:0px 0px 8px 0px;
+    border:2px solid #7C9C5A;
+    font-size:12px;
+    background-color:#7C9C5A;
+    color:#FFF;
+}
+
+.entry-title { 
+    color:#040; 
+    border-bottom: thin solid #040;
+    margin-bottom: 0.5em;
+}
+.title_button {
+    float:right;
+    margin-right:15px;
+}
+.pager {
+  width:400px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+/*table {}*/
+    
+tbody tr.even td{ background-color:#e1e4c7; }
+.odd{ background-color:#fff; }
+
+.center_text {text-align:center;}    
+
+.form_error {
+    color: #8A1F11;
+    list-style-type:none;
+    margin:0 0.5em 0 0;
+}
+
+th a { color:#7C9C5A }
+th a:hover { color:#c4cb90 }
+
+.media_thumb {
+    width: 170px;
+    height: 170px;
+    margin: 10px;
+}
+
+.media_thumb img{
+    display: block;
+    margin: auto;
+    vertical-align:middle;
+}
+
+.caption {
+    color: #FFF;
+}
+
+.edit_medium_next, .edit_medium_done, .cancel, .faux_link{
+    cursor:pointer;
+    color: #7C9C5A;
+}
+
+.faux_link:hover{
+    color:#EAEAEA;
+}
+
+.media_thumb img{
+    cursor: pointer;
+}
+
+.edit_title {
+    display:none;
+    color: #FFF;
+}
+.edit_descr{
+    display:none;
+    color: #FFF;
+}
+
+.edit_descr textarea{
+    height:120px;
+}
+
+.edit_failed{
+    display:none;
+    color: #F00;
+}
+
+.medium_descr{
+    color: #FFF;
+    background-color:#666;
+    width:100%;
+    position:absolute;
+    display:none;
+    opacity: .7;
+}
+
+.fence{
+    display:none;
+    position:fixed;
+    z-index:6000;
+    float:left;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.7;
+}
+
+.centerPopup{
+    /*Taken from http://tuljo.com/web-development/center-popup-jquery*/
+    background: #7C9C5A;
+    color: #FFF;
+    display:none;
+    /*display:inline;/*IE6*/
+    float:left;
+    height:100px;
+    position:fixed;
+    width:auto;/*can be % px auto*/
+    z-index:6001;
+}

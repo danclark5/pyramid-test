@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<% from firsttest.models import Group %>
+<html>
+  <head>
+    <title> Dan Clark - Developer</title>
+    <link rel="stylesheet" href="${request.static_url('firsttest:static/css/layout.css')}" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="${request.static_url('firsttest:static/css/general.css')}" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="${request.static_url('firsttest:static/css/blueprint/screen.css')}" type="text/css" media="screen, projection"/>
+    <link rel="stylesheet" href="${request.static_url('firsttest:static/css/blueprint/print.css')}" type="text/css" media="print"/>
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="${request.static_url('firsttest:static/css/blueprint/ie.css')}" type="text/css" media="screen, projection"/>
+    <![endif]-->
+    <script src="${request.static_url('firsttest:static/js/jquery-1.7.2.min.js')}"></script>
+    <script src="${request.static_url('firsttest:static/js/base.js')}"></script>
+    <script type="text/javascript" src="${request.static_url('firsttest:static/ckeditor/ckeditor.js')}"></script>
+    
+  </head>
+  <body>
+    <div id="container">
+    <header>
+      <div id="header">
+	    <h1 id="banner">
+          <a href="#">Dan Clark</a>
+		</h1>
+      </div>
+    </header>
+	<nav>
+      <div id="navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="#">Resume</a></li>
+          %if request.user and request.user.check_group(Group.OWNER):
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Pictures</a></li>
+          %endif
+          %if request.user: 
+          <li><a href="/logout">Log Out</a></li>
+          %else: 
+          <li><a href="/login">Login</a></li>
+          %endif
+        </ul>
+      </div>
+	</nav>
+    <div id="content-shell">
+      <div id="content-brace">
+        <div id="content">
+          ${self.flash_messages()}
+          ${self.body()}
+        </div>
+      </div>
+    </div>
+	  <div id="push"></div>
+	</div>
+	<footer>
+	  <div id="footer">
+	    "Amazing-looking ship though. Looks like a fish, moves like a fish, steers like a cow."
+	  </div>
+	</footer>
+  </body>
+</html>
+
+<%def name="flash_messages()">
+  %if request.session.peek_flash():
+    <% flash = request.session.pop_flash() %>
+    %for message in flash:
+    <div class="alert-message">
+        <a class="close" href="#">X</a>
+        <div>
+            <p> ${message} </p>
+        </div>
+    </div>
+    %endfor
+  %endif
+</%def>
